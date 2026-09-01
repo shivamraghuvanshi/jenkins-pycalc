@@ -13,7 +13,11 @@ pipeline {
         stage('Setup') {
             steps {
                 echo 'Installing dependencies...'
-                sh 'pip install pytest'
+                sh '''
+    python3 -m venv venv
+    ./venv/bin/pip install pytest
+'''
+
             }
         }
 
