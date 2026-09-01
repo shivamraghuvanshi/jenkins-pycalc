@@ -21,12 +21,13 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-                sh 'pytest -v test_calculator.py'
-            }
-        }
+stage('Test') {
+    steps {
+        echo 'Running tests...'
+        sh './venv/bin/pytest -v test_calculator.py'
+    }
+}
+
 
         stage('Run App') {
             steps {
